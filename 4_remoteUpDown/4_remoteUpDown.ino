@@ -76,13 +76,17 @@ void translateIR() {
     case 0xFFA25D: // POWER
       toggleLED();
       break;
-    case 0xFFE21D:   // FUNC/STOP
     case 0xFF629D:   // VOL+
+      increaseBrightness();
+      break;
+    case 0xFFA857:   // VOL-
+      decreaseBrightness();
+      break;
+    case 0xFFE21D:   // FUNC/STOP
     case 0xFF22DD:   // FAST BACK
     case 0xFF02FD:   // PAUSE
     case 0xFFC23D:   // FAST FORWARD
     case 0xFFE01F:   // DOWN
-    case 0xFFA857:   // VOL-
     case 0xFF906F:   // UP
     case 0xFF9867:   // EQ
     case 0xFFB04F:   // ST/REPT
