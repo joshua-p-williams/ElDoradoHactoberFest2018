@@ -1,5 +1,5 @@
 const int BLINK_LED = 10; // Our LED is connected to pin 10
-const int fadeAmount = 5; // How quickly to fade the LED by
+const int FADE_AMOUNT = 5; // How quickly to fade the LED by
 
 int brightness = 0; // Variable to hold the current brightness of the LED start it at 0 or completely off
 int direction = 1; // Variable to use for increasing the brightness or decreasing it (0 = down, 1 = up)
@@ -18,10 +18,10 @@ void setup() {
 void increaseBrightness() {
 
   // Add the fade amount to the brightness to increase it
-  brightness += fadeAmount;
+  brightness += FADE_AMOUNT;
 
   // The LED can only go up to 255 (the maximum value for an 8 bit register)
-  if (brightness + fadeAmount > 255) {
+  if (brightness + FADE_AMOUNT > 255) {
     brightness = 255;
   }
 
@@ -36,10 +36,10 @@ void increaseBrightness() {
 void decreaseBrightness() {
 
   // Subtract the fade amount from the brightness to decrease it
-  brightness -= fadeAmount;
+  brightness -= FADE_AMOUNT;
 
   // The LED can only go down to 0
-  if (brightness - fadeAmount < 0) {
+  if (brightness - FADE_AMOUNT < 0) {
     brightness = 0;
   }
 
